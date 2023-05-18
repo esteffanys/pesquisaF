@@ -1,0 +1,7 @@
+{
+  "name": "pesquisaF",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
