@@ -1,3 +1,4 @@
+import { OmdbService } from './../services/omdb.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
-
+ titulo=''
+ filme:any
+  constructor(private omdbService:OmdbService) {}
+  procurar() {
+    this.omdbService.buscartitulo(this.titulo)
+      .subscribe((response: any) => {
+        this.filme = response;
+      });
+  }
 }

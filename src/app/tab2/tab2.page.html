@@ -13,5 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-searchbar [(ngModel)]="titulo" (ionChange)="procurar()"></ion-searchbar>
+
+  <ion-card *ngIf="filme">
+    <ion-card-header>
+      {{filme.Title }}
+    </ion-card-header>
+    <ion-card-content>
+      {{ filme.Plot }}
+    </ion-card-content>
+  </ion-card>
+
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>

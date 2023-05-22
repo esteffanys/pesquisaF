@@ -12,6 +12,10 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-
+ <ion-list>
+    <ion-item *ngFor="let favoritos of favoritos">
+      {{ favoritos.Title }}
+    </ion-item>
+  </ion-list>
   <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>
