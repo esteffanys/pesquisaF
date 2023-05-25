@@ -1,6 +1,5 @@
-import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
-
+import { FilmeService } from '../service/filme.service';
 
 @Component({
   selector: 'app-tab3',
@@ -8,13 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-favoritos:any[] = [];
-  constructor(private storage: Storage) {}
+  favoritos: any[]
+  constructor(private filmeService: FilmeService) {
+    this.favoritos = [];
+    this.pegarFilmes()
+  }
 
-  ver() {
-    this.storage.get('favoritos')
-      .then((Filmes) => {
-        this.favoritos = Filmes || [];
-      });
+  pegarFilmes(){
+    this.favoritos = this.filmeService.obterFavoritos();
   }
 }
